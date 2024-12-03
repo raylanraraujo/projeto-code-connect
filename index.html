@@ -22,25 +22,72 @@
                     <a href="#" class="link-destaque">Publicar</a> <!--foi colocado um link porque o botão não gera nenhuma outra ação a não ser direcionar para outra tela-->
                 </li>
                 <li>
-                    <a href="#"><img src="img/feed.svg" alt="">
-                    Feed</a>
+                    <a href="#">
+                        <img src="img/feed.svg">
+                        Feed
+                    </a>
                 </li>
                 <li>
-                    <a href="#"><img src="img/account_circle.svg">
-                    Perfil</a>
+                    <a href="#">
+                        <img src="img/account_circle.svg">
+                        Perfil
+                    </a>
                 </li>
                 <li>
-                    <a href="#"><img src="img/info.svg" alt="">
-                    Sobre nós</a>
+                    <a href="#">
+                        <img src="img/info.svg" alt="">
+                        Sobre nós
+                    </a>
                 </li>
                 <li>
-                    <a href="#"> <img src="img/logout.svg">
-                    Sair
-                </a>                    
+                    <a href="#">
+                        <img src="img/logout.svg">
+                        Sair
+                    </a>                    
                 </li>
             </ul>
         </nav>
     </aside>
+
+    <main>
+        <div class="container-upload-imagem">
+            <div class="container-imagem">
+                <img src="img/imagem1.png" alt="" class="main-imagem">
+            </div>
+            <button>Carregar imagem</button>
+            <div class="container-imagem-nome">
+                <p>imagem_projeto.png</p>
+                <img src="img/close.svg">
+            </div>
+        </div>
+        <div class="container-descricao">
+            <h2>Novo projeto</h2>
+            <form action="">
+                <div>
+                    <label for="nome">Nome do projeto</label>
+                    <input type="text" name="nome" id="nome" /> <!--importante lembrar de colocar o fechamento do input -->
+                </div>
+                <div>
+                    <label for="descricao">Descrição</label>
+                    <textarea name="descricao" id="descricao"></textarea>
+                </div>
+                <div>
+                    <label for="categoria">Tags</label>
+                    <input type="text" name="categoria" id="categoria" />
+                </div>
+                <ul class="lista-tags">
+                    <li>
+                        <p>Front-end</p>
+                        <img src="img/close-black.svg">
+                    </li>
+                </ul>
+                <div class="container-botoes">
+                    <button class="botao-descartar">Descartar</button>
+                    <button class="botao-publicar">Publicar</button>
+                </div>
+            </form>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 
