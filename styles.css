@@ -36,7 +36,7 @@ aside {
     text-align: center;
 }
 
-.lista-link {
+.lista-links {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,7 +45,7 @@ aside {
     list-style-type: none;
 }
 
-.lista-link li a{
+.lista-links li a{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -54,4 +54,13 @@ aside {
     color: var(--secondary-color);
     font-size: 22px;
 
+}
+.lista-links li:first-of-type a {
+    border: 1px solid var(--primary-color);
+}
+
+.link-destaques {
+    border-radius: 8px;
+    color: var(--primary-color);
+    padding: 12px 30px;
 }
