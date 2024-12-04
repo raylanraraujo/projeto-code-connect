@@ -24,3 +24,23 @@ function lerConteudoDoArquivo (arquivo) { //a função recebe o arquivo em si qu
         leitor.readAsDataURL(arquivo) //ele é um metodo para ler o conteudo do tipo Blob ou File. No nosso caso ele vai fazer a leitura do arquivo.
     })
 }
+
+const imagemPrincipal = document.querySelector(".main-imagem");
+const nomeDaImagem = document.querySelector(".container-imagem-nome p")
+
+inputUpload.addEventListener("change", async (evento) => { //a leitura do arquivo vai acontecer no momento que ocorre uma mudança do arquivo que está lendo. Quando acontecer alguma mudança no input imagem, vai acontecer uma funcionalidade que será a leitura do arquivo. foi colocado o "async" antes do evento para informar que a função é assíncrona
+    const arquivo = evento.target.files[0]; //selecionar o arquivo que está sendo mandado nessa mudança. Ou seja, ele vai pegar o evento do envio, vai entrar dentro desse evento e pegar o arquivo que está sendo enviado
+
+    if (arquivo) { //aqui inicia o processo de validação. Se realmente houver um arquivo...
+        try { //eu quero que tente fazer alguma coisa
+            const conteudoDoArquivo = await lerConteudoDoArquivo(arquivo); //se eu tô enviado pra função ler conteúdo do arquivo e ela tem que ter aquele tempo para fazer a promessa ser resolvida ou nã0. Não pode ser chamado simplesmente ela porque se nao o caminho do sripts.js será seguido e não vai esperar essa resoluçào da promessa. Para definir que se deseja esperar que essa promessa seja resolvida ou não, precisamos definir a funcionalidade como async antes dos parenteses do evento. Além disso precisa ser definido o que precisa ser esperado.  Por esta razão foi colocar o o "await" antes da função.
+            
+            imagemPrincipal.src = conteudoDoArquivo.url //Após a leitura do aquivo, eu quero que seja substituído a imagem
+            nomeDaImagem.textContent = conteudoDoArquivo.nome; //Após a leitura, trocar o nome da imagem
+        
+        } catch (Erro) { //caso venha a ocorrer algum erro e a promessa nao seja resolvida, ou seja, a promessa seja reject o catch catura esse erro e vai fazer alguma coisa com ele.
+            
+            console.error("Erro na leitura do arquivo"); //nesse ele mostra no cosole que deu um erro no upload desse arquivo 
+        }
+    }
+})
