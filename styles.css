@@ -180,3 +180,56 @@ textarea {
     transform: translateY(-50%);
     margin-left: 8px;
 }
+
+.container-descricao {
+    width: 422px;
+}
+
+.main-imagem {
+    border-radius: 8px;
+    height: 100%;
+    object-fit: cover; /*define como a imagem vai ser renderizada dentro do elemento*/
+}
+
+.container-imagem {
+    height: 368px;
+    padding: 24px 16px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+}
+
+.container-upload-imagem button {
+    width: 100%;
+    margin: 16px 0px 8px 0px;
+    padding: 12px;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    background-color: var(--itens-background);
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.container-upload-imagem button::after {
+    content: "";
+    background-image: url("img/upload.svg");
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px;
+}
+
+.container-imagem-nome {
+    display: flex;
+    gap: 8px;
+    color: var(--secondary-color);
+    font-size: 15px;
+}
